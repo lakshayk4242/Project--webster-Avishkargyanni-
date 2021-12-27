@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type ="text/css" href ="style5.css">
+
+</head>
+<body>
+    <div class="header">
+        <a href="#default" class="logo">CALORIE HEIST</a>
+        <div class="header-right">
+    </div>
+  </div>
+ 
+<div id="content">
+    <div id="marketing">
+        <div id="headline">Take the first step towards<br>a healthier you with Calorie Heist</div>
+        <div id="features">
+            <div>
+                <img src="SetGoal.svg" width="100px" alt="flag" />
+                <p>Set Your Goals</p>
+            </div>
+            <div>
+                <img src="TrackFoods.svg" width="100px" alt="food" />
+                <p>Track Your Foods</p>
+            </div>
+            <div>
+                <img src="LoseWeight.svg" width="100px" alt="ribbon" />
+                <p>Lose Weight</p>
+            </div>
+        </div>
+    </div>
+    <div id="question_step" class="step display-none">
+        <form id="question_form" class="needs-validation" novalidate>
+            <div class="form-middle">
+                <div class="heading">Have you counted calories before?</div>
+                <button type="submit" class="button btn" onclick="onboardingRequest.question=this.value;" value="Yes">Yes</button>
+                <button type="submit" class="button btn" onclick="onboardingRequest.question=this.value;" value="No">No</button>
+            </div>
+        </form>
+    </div>
+    <div id="weight_step" class="step display-none">
+        <div class="heading" id="weight_step_header"></div>
+        <form id="weight_form" class="needs-validation" novalidate>
+            <a class="back" href="javascript:history.back()">&lt;</a>
+            <div class="form-middle">
+                <div class="heading">Current Weight</div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="current_weight" type="number" inputmode="decimal" class="form-control" data-focus required aria-label="current weight quantity"/>
+                        <select id="current_weight_stones" class="custom-select display-none"></select>
+                        <select id="current_weight_units" class="custom-select" onchange="setWeightUnits(this.value)">
+                            <option value="Pounds" selected>lb</option>
+                            <option value="Kilograms">kg</option>
+                            <option value="Stones">st</option>
+                        </select>
+                        <div class="invalid-feedback">This is an unsupported weight.</div>
+                    </div>
+                </div>
+                <div class="heading">Goal Weight</div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="goal_weight" type="number" inputmode="decimal" class="form-control" required aria-label="goal weight quantity"/>
+                        <select id="goal_weight_stones" class="custom-select display-none"></select>
+                        <select id="goal_weight_units" class="custom-select" onchange="setWeightUnits(this.value)">
+                            <option value="Pounds" selected>lb</option>
+                            <option value="Kilograms">kg</option>
+                            <option value="Stones">st</option>
+                        </select>
+                        <div class="invalid-feedback">This is an unsupported weight.</div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="button btn">Continue</button>
+            <div class="disclaimer">To create your personalized weight loss plan, Lose It! uses BMR (Basal Metabolic Rate) to calculate your calorie budget, which requires weight, height, biological sex and age as inputs.</div>
+        </form>
+    </div>
+</body>
+</html>
